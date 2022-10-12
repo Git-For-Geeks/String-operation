@@ -26,3 +26,9 @@ body{
 #p{
     font-family: 'Courier New', Courier, monospace;
 }
+
+/* Btn hover effect - simplistic with smooth animation*/
+#btn:hover{
+    background-color: rgba(34, 34, 34, 0.61);
+    transition: all 0.3s ease-in-out
+}
