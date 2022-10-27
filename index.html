@@ -60,6 +60,20 @@
             document.getElementById("result").innerHTML = "String 2: " + str4;
             document.getElementById("ab").innerHTML = "Concatenated String: " + str5;
         }
+
+
+         function countwords() {
+            var str2 = prompt("Enter the string\n", " ");
+            if (str2 == " " || str2 == null) {
+                window.alert("Enter String");
+                return false;
+            }
+            var c= str2.trim().split(/\s+/).length;;
+            console.log(c);
+            document.getElementById("display").innerHTML = "Original String: " + str2;
+            document.getElementById("result").innerHTML = "length of string is: "+c;
+            
+        }
         </script>
 </head>
 
@@ -87,6 +101,9 @@
                 <li class="nav-item">
                     <a class="nav-link" onclick="concatenate()">Concatenate</a> 
                     </li>
+                     <li class="nav-item">
+                    <a class="nav-link" onclick="countwords()">Count words</a> 
+                    </li>
                 </ul>
                 </div>
             </div>
@@ -96,7 +113,7 @@
             <input id="btn" type="button" value="1] Position of the leftmost vowel" onclick="str_vowel()" /><br><br>
             <input id="btn" type="button" value="2] Reverse a String" onclick="reverse()" /><br><br>
             <input id="btn" type="button" value="3] Concatenation" onclick="concatenate()" /><br><br>
-
+            <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
 
             <p id="display">Click on operation you want to perform! </p>
             <p id="result">Answer will display here...</p>
