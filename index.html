@@ -85,6 +85,24 @@
             document.getElementById("display").innerHTML="Original String: "+str01;
             document.getElementById("result").innerHTML="String in UpperCase: "+output;
         }
+        function lower(){
+            var str01=prompt("Enter string\n"," ");
+            if(str01== " " || str01==null){
+                window.alert("Enter valid string");
+                return false;
+            }
+            var output=str01.toLowerCase();
+            console.log(output);
+            document.getElementById("display").innerHTML="Original String: "+str01;
+            document.getElementById("result").innerHTML="String in LowerCase: "+output;
+        }
+        function findLength(){
+            var str01=prompt("Enter string\n");
+            var output=str01.length;
+            console.log(output);
+            document.getElementById("display").innerHTML="Original String: "+str01;
+            document.getElementById("result").innerHTML="Length of the string: "+output;
+        }
         </script>
 </head>
 
@@ -128,7 +146,9 @@
             <input id="btn" type="button" value="2] Reverse a String" onclick="reverse()" /><br><br>
             <input id="btn" type="button" value="3] Concatenation" onclick="concatenate()" /><br><br>
             <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
-             <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
+            <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
+            <input id="btn" type="button" value="6]Convert String to Lowercase" onclick="lower()"><br><br>
+            <input id="btn" type="button" value="6]Find Length of the string" onclick="findLength()"><br><br>
             <p id="display">Click on operation you want to perform! </p>
             <p id="result">Answer will display here...</p>
             <p id="ab"> </p>
