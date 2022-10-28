@@ -74,6 +74,17 @@
             document.getElementById("result").innerHTML = "length of string is: "+c;
             
         }
+        function upper(){
+            var str01=prompt("Enter a string\n"," ");
+            if(str01== " " || str01==null){
+                window.alert("Enter valid string");
+                return false;
+            }
+            var output=str01.toUpperCase();
+            console.log(output);
+            document.getElementById("display").innerHTML="Original String: "+str01;
+            document.getElementById("result").innerHTML="String in UpperCase: "+output;
+        }
         </script>
 </head>
 
@@ -104,6 +115,9 @@
                      <li class="nav-item">
                     <a class="nav-link" onclick="countwords()">Count words</a> 
                     </li>
+                    <li>
+                        <a class="nav-link" onclick="upper()">toUpperCase</a>
+                    </li>
                 </ul>
                 </div>
             </div>
@@ -114,7 +128,7 @@
             <input id="btn" type="button" value="2] Reverse a String" onclick="reverse()" /><br><br>
             <input id="btn" type="button" value="3] Concatenation" onclick="concatenate()" /><br><br>
             <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
-
+             <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
             <p id="display">Click on operation you want to perform! </p>
             <p id="result">Answer will display here...</p>
             <p id="ab"> </p>
