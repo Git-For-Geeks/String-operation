@@ -84,6 +84,17 @@
             console.log(output);
             document.getElementById("display").innerHTML="Original String: "+str01;
             document.getElementById("result").innerHTML="String in UpperCase: "+output;
+        } 
+        function removeExtraSpaces(){
+            var str01=prompt("Enter a string\n"," ");
+            if(str01== " " || str01==null){
+                window.alert("Enter valid string");
+                return false;
+            }
+            let output = str01.split(/[ ]+/);
+            console.log(output);
+            document.getElementById("display").innerHTML="Original String: "+str01;
+            document.getElementById("result").innerHTML="String after removing extra Spaces: "+output;
         }
         </script>
 </head>
@@ -118,6 +129,9 @@
                     <li>
                         <a class="nav-link" onclick="upper()">toUpperCase</a>
                     </li>
+                    <li>
+                        <a class="nav-link" onclick="removeExtraSpaces()">Remove Extra Spaces</a>
+                    </li>
                 </ul>
                 </div>
             </div>
@@ -129,6 +143,7 @@
             <input id="btn" type="button" value="3] Concatenation" onclick="concatenate()" /><br><br>
             <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
              <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
+             <input id="btn" type="button" value="6]Remove Extra Spaces" onclick="removeExtraSpaces()"><br><br>
             <p id="display">Click on operation you want to perform! </p>
             <p id="result">Answer will display here...</p>
             <p id="ab"> </p>
