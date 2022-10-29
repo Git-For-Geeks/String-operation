@@ -138,6 +138,41 @@
             document.getElementById("result").innerHTML = "Word found at position: " + str3.search(str2);
 
         }
+
+        function getVowelCount(str) {
+          var str3 = prompt("Enter Word\n", " ");
+          var vowelsCounter = 0;
+           if ((str3 == " " || str3 == null)) {
+                window.alert("Enter Word");
+                return false;
+            }
+          str3 = str3.toLowerCase();
+          let vowels = ["a","e","i","o","u"];
+          for (let i of str3) {
+            if (vowels.includes(i)) vowelsCounter++;
+          }
+          document.getElementById("display").innerHTML = "Original String: " + str3;
+          document.getElementById("result").innerHTML = "Total vowel" + vowelsCounter;
+          // return vowelsCounter;
+        }
+
+        function getConsonantsCount(str) {
+            var str3 = prompt("Enter Word\n", " ");          
+           if ((str3 == " " || str3 == null)) {
+                window.alert("Enter Word");
+                return false;
+            }
+            var vowelsCounter = 0;
+            str3 = str3.toLowerCase();
+          let vowels = ["a","e","i","o","u"];
+          for (let i of str3) {
+            if (vowels.includes(i)) vowelsCounter++;
+          }
+          var constCounter=str3.trim().length -vowelsCounter;
+                document.getElementById("display").innerHTML = "Original String: " + str3;
+    document.getElementById("result").innerHTML = "Total Consonants " + constCounter;
+         
+        }
     </script>
 </head>
 
@@ -181,6 +216,12 @@
                     <li>
                         <a class="nav-link" onclick="searchWord()">searchWord</a>
                     </li>
+                    <li>
+                        <a class="nav-link" onclick="getVowelCount()">getVowel</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" onclick="getConsonantsCount()">getConsonants</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -194,7 +235,11 @@
         <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
         <input id="btn" type="button" value="6]Convert String to Lowercase" onclick="lower()"><br><br>
         <input id="btn" type="button" value="7]Replace a word in String with other word" onclick="replacestring()"><br><br>
-        <input id="btn" type="button" value="8]Search word in String" onclick="searchWord()"><br><br>
+        <input id="btn" type="button" value="8]Search word in String" onclick="searchWord()">
+        <br><br>
+        <input id="btn" type="button" value="9]Count vowels in word" onclick="getVowelCount()"><br><br>
+        <input id="btn" type="button" value="10]Count Consonants in word" onclick="getConsonantsCount()">
+        <br><br>
         <p id="display">Click on operation you want to perform! </p>
         <p id="result">Answer will display here...</p>
         <p id="ab"> </p>
