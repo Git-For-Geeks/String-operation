@@ -102,7 +102,77 @@
             document.getElementById("display").innerHTML="Original String: "+str01;
             document.getElementById("result").innerHTML="String after removing extra Spaces: "+output;
         } 
-        </script>
+
+
+        function replacestring() {
+            var str3 = prompt("Enter the string\n", " ");
+            var str2 = prompt("Enter word to replace:\n", "");
+            var str4 = prompt("Enter word to replace: with\n", "");
+            if ((str3 == " " || str3 == null) && (str4 == " " || str4 == null) && (str2 == " " || str2 == null)) {
+                window.alert("Enter String");
+                return false;
+            }
+            if (str3.search(str2)==-1){
+            window.alert("Word should be present in  String"); return false;}
+          
+            document.getElementById("display").innerHTML = "Original String: " + str2;
+            document.getElementById("result").innerHTML = "New string is: " + str3.replace(str2,str4);;
+
+        }
+        function searchWord() {
+            var str3 = prompt("Enter the string\n", " ");
+            var str2 = prompt("Enter word to search:\n", "");
+            
+            if ((str3 == " " || str3 == null) && (str4 == " " || str4 == null)) {
+                window.alert("Enter String");
+                return false;
+            }
+            if (str3.search(str2)==-1){
+            window.alert("Word not found in String"); 
+            document.getElementById("display").innerHTML = "Original String: " + str2
+            document.getElementById("result").innerHTML = "Word not found!";
+            return false;}
+          
+            document.getElementById("display").innerHTML = "Original String: " + str2;
+            document.getElementById("result").innerHTML = "Word found at position: " + str3.search(str2);
+
+        }
+
+        function getVowelCount(str) {
+          var str3 = prompt("Enter Word\n", " ");
+          var vowelsCounter = 0;
+           if ((str3 == " " || str3 == null)) {
+                window.alert("Enter Word");
+                return false;
+            }
+          str3 = str3.toLowerCase();
+          let vowels = ["a","e","i","o","u"];
+          for (let i of str3) {
+            if (vowels.includes(i)) vowelsCounter++;
+          }
+          document.getElementById("display").innerHTML = "Original String: " + str3;
+          document.getElementById("result").innerHTML = "Total vowel" + vowelsCounter;
+          // return vowelsCounter;
+        }
+
+        function getConsonantsCount(str) {
+            var str3 = prompt("Enter Word\n", " ");          
+           if ((str3 == " " || str3 == null)) {
+                window.alert("Enter Word");
+                return false;
+            }
+            var vowelsCounter = 0;
+            str3 = str3.toLowerCase();
+          let vowels = ["a","e","i","o","u"];
+          for (let i of str3) {
+            if (vowels.includes(i)) vowelsCounter++;
+          }
+          var constCounter=str3.trim().length -vowelsCounter;
+                document.getElementById("display").innerHTML = "Original String: " + str3;
+    document.getElementById("result").innerHTML = "Total Consonants " + constCounter;
+         
+        }
+    </script>
 </head>
 
 
@@ -139,48 +209,60 @@
                     <li>
                         <a class="nav-link" onclick="removeExtraSpaces()">Remove Extra Spaces</a>
                     </li>
+                    <li>
+                        <a class="nav-link" onclick="getVowelCount()">getVowel</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" onclick="getConsonantsCount()">getConsonants</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <h3 align="center">Choose the String Operations to Perform</h3>
-        <form class="form_items" align="center">
-            <input id="btn" type="button" value="1] Position of the leftmost vowel" onclick="str_vowel()" /><br><br>
-            <input id="btn" type="button" value="2] Reverse a String" onclick="reverse()" /><br><br>
-            <input id="btn" type="button" value="3] Concatenation" onclick="concatenate()" /><br><br>
-            <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
-             <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
-             <input id="btn" type="button" value="6]Remove Extra Spaces" onclick="removeExtraSpaces()"><br><br>
-            <p id="display">Click on operation you want to perform! </p>
-            <p id="result">Answer will display here...</p>
-            <p id="ab"> </p>
-        </form> 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>company</h4>
-                        <ul>
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">our services</a></li>
-                            <li><a href="#">privacy policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>get help</h4>
-                        <ul>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">payment options</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>follow us</h4>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+    <form class="form_items" align="center">
+        <input id="btn" type="button" value="1] Position of the leftmost vowel" onclick="str_vowel()" /><br><br>
+        <input id="btn" type="button" value="2] Reverse a String" onclick="reverse()" /><br><br>
+        <input id="btn" type="button" value="3] Concatenation" onclick="concatenate()" /><br><br>
+        <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
+        <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
+        <input id="btn" type="button" value="6]Convert String to Lowercase" onclick="lower()"><br><br>
+        <input id="btn" type="button" value="7]Replace a word in String with other word" onclick="replacestring()"><br><br>
+        <input id="btn" type="button" value="8]Search word in String" onclick="searchWord()">
+        <br><br>
+        <input id="btn" type="button" value="9]Count vowels in word" onclick="getVowelCount()"><br><br>
+        <input id="btn" type="button" value="10]Count Consonants in word" onclick="getConsonantsCount()">
+        <br><br>
+        <input id="btn" type="button" value="11]Remove Extra Spaces" onclick="removeExtraSpaces()"><br><br>
+        <p id="display">Click on operation you want to perform! </p>
+        <p id="result">Answer will display here...</p>
+        <p id="ab"> </p>
+    </form>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
