@@ -3,12 +3,17 @@
 
 <head>
     <title>Spring Operations</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css">
 
     <!--JAVASCRIPT CODE-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
     <script type="text/javascript">
 
         //Leftmost vowel in the string
@@ -19,15 +24,16 @@
                 window.alert("Enter String");
                 return false;
             }
-            
+
             for (var i = 0; i < str.length; i++) {
-            chr = str.charAt(i);
-             if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u' || chr == 'A' || chr == 'E' || chr == 'I' || chr == 'O' || chr == 'U')
-                break; }
+                chr = str.charAt(i);
+                if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u' || chr == 'A' || chr == 'E' || chr == 'I' || chr == 'O' || chr == 'U')
+                    break;
+            }
             if (i < str.length)
-            document.getElementById("display").innerHTML = "String: " + str;
+                document.getElementById("display").innerHTML = "String: " + str;
             document.getElementById("result").innerHTML = "Leftmost vowel : " + chr;
-            pos=i+1;
+            pos = i + 1;
             document.getElementById("ab").innerHTML = "Position: " + pos;
 
         }
@@ -62,29 +68,29 @@
         }
 
 
-         function countwords() {
+        function countwords() {
             var str2 = prompt("Enter the string\n", " ");
             if (str2 == " " || str2 == null) {
                 window.alert("Enter String");
                 return false;
             }
-            var c= str2.trim().split(/\s+/).length;;
+            var c = str2.trim().split(/\s+/).length;;
             console.log(c);
             document.getElementById("display").innerHTML = "Original String: " + str2;
-            document.getElementById("result").innerHTML = "length of string is: "+c;
-            
+            document.getElementById("result").innerHTML = "length of string is: " + c;
+
         }
-        function upper(){
-            var str01=prompt("Enter a string\n"," ");
-            if(str01== " " || str01==null){
+        function upper() {
+            var str01 = prompt("Enter a string\n", " ");
+            if (str01 == " " || str01 == null) {
                 window.alert("Enter valid string");
                 return false;
             }
-            var output=str01.toUpperCase();
+            var output = str01.toUpperCase();
             console.log(output);
             document.getElementById("display").innerHTML="Original String: "+str01;
             document.getElementById("result").innerHTML="String in UpperCase: "+output;
-        } 
+        }
         function removeExtraSpaces(){
             var str01=prompt("Enter a string\n"," ");
             if(str01== " " || str01==null){
@@ -95,36 +101,37 @@
             console.log(output);
             document.getElementById("display").innerHTML="Original String: "+str01;
             document.getElementById("result").innerHTML="String after removing extra Spaces: "+output;
-        }
+        } 
         </script>
 </head>
 
 
 
-<body>     
+<body>
     <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
+        <div class="container-fluid">
             <i class="fa-brands fa-creative-commons-nd fa-2x mx-2"></i>
-            <a class="navbar-brand" href="#" >
+            <a class="navbar-brand" href="#">
                 String Operations
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="reverse()">Reverse</a> 
                     <li class="nav-item">
-                    <a class="nav-link" onclick="str_vowel()">Vowel</a> 
-                <li class="nav-item">
-                    <a class="nav-link" onclick="concatenate()">Concatenate</a> 
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-                     <li class="nav-item">
-                    <a class="nav-link" onclick="countwords()">Count words</a> 
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="reverse()">Reverse</a>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="str_vowel()">Vowel</a>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="concatenate()">Concatenate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="countwords()">Count words</a>
                     </li>
                     <li>
                         <a class="nav-link" onclick="upper()">toUpperCase</a>
@@ -133,8 +140,8 @@
                         <a class="nav-link" onclick="removeExtraSpaces()">Remove Extra Spaces</a>
                     </li>
                 </ul>
-                </div>
             </div>
+        </div>
     </nav>
     <h3 align="center">Choose the String Operations to Perform</h3>
         <form class="form_items" align="center">
@@ -179,4 +186,5 @@
             </div>
        </footer>
 </body>
+
 </html>
