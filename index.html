@@ -104,6 +104,40 @@
             document.getElementById("result").innerHTML = "String in LowerCase: " + output;
         }
 
+
+        function replacestring() {
+            var str3 = prompt("Enter the string\n", " ");
+            var str2 = prompt("Enter word to replace:\n", "");
+            var str4 = prompt("Enter word to replace: with\n", "");
+            if ((str3 == " " || str3 == null) && (str4 == " " || str4 == null) && (str2 == " " || str2 == null)) {
+                window.alert("Enter String");
+                return false;
+            }
+            if (str3.search(str2)==-1){
+            window.alert("Word should be present in  String"); return false;}
+          
+            document.getElementById("display").innerHTML = "Original String: " + str2;
+            document.getElementById("result").innerHTML = "New string is: " + str3.replace(str2,str4);;
+
+        }
+        function searchWord() {
+            var str3 = prompt("Enter the string\n", " ");
+            var str2 = prompt("Enter word to search:\n", "");
+            
+            if ((str3 == " " || str3 == null) && (str4 == " " || str4 == null)) {
+                window.alert("Enter String");
+                return false;
+            }
+            if (str3.search(str2)==-1){
+            window.alert("Word not found in String"); 
+            document.getElementById("display").innerHTML = "Original String: " + str2
+            document.getElementById("result").innerHTML = "Word not found!";
+            return false;}
+          
+            document.getElementById("display").innerHTML = "Original String: " + str2;
+            document.getElementById("result").innerHTML = "Word found at position: " + str3.search(str2);
+
+        }
     </script>
 </head>
 
@@ -141,6 +175,12 @@
                     <li>
                         <a class="nav-link" onclick="lower()">toLowerCase</a>
                     </li>
+                    <li>
+                        <a class="nav-link" onclick="replacestring()">replaceString</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" onclick="searchWord()">searchWord</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -153,6 +193,8 @@
         <input id="btn" type="button" value="4] Count Total words in string" onclick="countwords()" /><br><br>
         <input id="btn" type="button" value="5]Convert String to Uppercase" onclick="upper()"><br><br>
         <input id="btn" type="button" value="6]Convert String to Lowercase" onclick="lower()"><br><br>
+        <input id="btn" type="button" value="7]Replace a word in String with other word" onclick="replacestring()"><br><br>
+        <input id="btn" type="button" value="8]Search word in String" onclick="searchWord()"><br><br>
         <p id="display">Click on operation you want to perform! </p>
         <p id="result">Answer will display here...</p>
         <p id="ab"> </p>
