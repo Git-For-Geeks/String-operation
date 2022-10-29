@@ -88,21 +88,20 @@
             }
             var output = str01.toUpperCase();
             console.log(output);
-            document.getElementById("display").innerHTML = "Original String: " + str01;
-            document.getElementById("result").innerHTML = "String in UpperCase: " + output;
+            document.getElementById("display").innerHTML="Original String: "+str01;
+            document.getElementById("result").innerHTML="String in UpperCase: "+output;
         }
-
-        function lower() {
-            var str1 = prompt("Enter a string\n", " ");
-            if (str1 == " " || str1 == null) {
+        function removeExtraSpaces(){
+            var str01=prompt("Enter a string\n"," ");
+            if(str01== " " || str01==null){
                 window.alert("Enter valid string");
                 return false;
             }
-            var output = str1.toLowerCase();
+            let output = str01.split(/[ ]+/);
             console.log(output);
-            document.getElementById("display").innerHTML = "Original String: " + str1;
-            document.getElementById("result").innerHTML = "String in LowerCase: " + output;
-        }
+            document.getElementById("display").innerHTML="Original String: "+str01;
+            document.getElementById("result").innerHTML="String after removing extra Spaces: "+output;
+        } 
 
 
         function replacestring() {
@@ -208,13 +207,7 @@
                         <a class="nav-link" onclick="upper()">toUpperCase</a>
                     </li>
                     <li>
-                        <a class="nav-link" onclick="lower()">toLowerCase</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" onclick="replacestring()">replaceString</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" onclick="searchWord()">searchWord</a>
+                        <a class="nav-link" onclick="removeExtraSpaces()">Remove Extra Spaces</a>
                     </li>
                     <li>
                         <a class="nav-link" onclick="getVowelCount()">getVowel</a>
@@ -240,6 +233,7 @@
         <input id="btn" type="button" value="9]Count vowels in word" onclick="getVowelCount()"><br><br>
         <input id="btn" type="button" value="10]Count Consonants in word" onclick="getConsonantsCount()">
         <br><br>
+        <input id="btn" type="button" value="11]Remove Extra Spaces" onclick="removeExtraSpaces()"><br><br>
         <p id="display">Click on operation you want to perform! </p>
         <p id="result">Answer will display here...</p>
         <p id="ab"> </p>
@@ -272,8 +266,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+       </footer>
 </body>
 
 </html>
